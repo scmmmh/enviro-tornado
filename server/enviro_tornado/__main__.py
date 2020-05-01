@@ -40,7 +40,7 @@ def collect_measurements():
 class TemperatureHandler(WebSocketHandler):
 
     def open(self):
-        self.write_message(temperature)
+        self.write_message(json.dumps({'value': temperature}))
         self.running = True
         IOLoop.current().add_callback(self.periodic)
 
@@ -54,14 +54,14 @@ class TemperatureHandler(WebSocketHandler):
         while self.running:
             await temperature_update.wait()
             if self.running:
-                self.write_message(temperature)
+                self.write_message(json.dumps({'value': temperature}))
                 temperature_update.clear()
 
 
 class HumidityHandler(WebSocketHandler):
 
     def open(self):
-        self.write_message(humidity)
+        self.write_message({'value': humidity})
         self.running = True
         IOLoop.current().add_callback(self.periodic)
 
@@ -75,7 +75,7 @@ class HumidityHandler(WebSocketHandler):
         while self.running:
             await humidity_update.wait()
             if self.running:
-                self.write_message(humidity)
+                self.write_message({'value': humidity})
                 humidity_update.clear()
 
 
