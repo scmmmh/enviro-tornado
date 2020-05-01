@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the enviro-tornado server
+
+[Service]
+Type=simple
+ExecStart=/opt/enviro-tornado/.venv/bin/python -m enviro_tornado
+User=enviro
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "enviro-tornado-server"
+version = "0.1.0"
+description = ""
+authors = ["Mark <mark.hall@work.room3b.eu>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+tornado = "^6.0.4"
+enviroplus = "^0.0.3"
+smbus = "^1.1.post2"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.5.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
