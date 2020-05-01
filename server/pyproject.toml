@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "enviro-tornado-server"
+name = "enviro_tornado"
 version = "0.1.0"
 description = ""
 authors = ["Mark <mark.hall@work.room3b.eu>"]
